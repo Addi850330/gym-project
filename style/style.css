@@ -1,0 +1,780 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: rgb(9, 32, 63);
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 30px;
+}
+header nav .icon a {
+  margin-left: 50px;
+}
+header nav .icon a svg {
+  width: 10vh;
+}
+header nav .link ul {
+  display: flex;
+  align-items: center;
+}
+header nav .link ul li a {
+  font-size: 1.2rem;
+  margin-right: 40px;
+  color: rgb(246, 235, 225);
+}
+header nav .link ul li a svg {
+  width: 1.8rem;
+  fill: rgb(246, 235, 225);
+  padding-top: 10px;
+}
+header nav .link ul li:nth-child(6) a {
+  font-size: 1rem;
+}
+header nav .hidden-link-button {
+  height: 30px;
+  width: 30px;
+  border: 2px solid rgb(246, 235, 225);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-right: 20px;
+  display: none;
+}
+header nav .hidden-link-button div {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  border: 1px solid rgb(246, 235, 225);
+  transition: 0.5s;
+}
+header nav .hidden-link-button .row1 {
+  top: 4px;
+}
+header nav .hidden-link-button .row2 {
+  opacity: 1;
+}
+header nav .hidden-link-button .row3 {
+  bottom: 4px;
+}
+header nav .hidden-link-button .row1-click {
+  top: 12px;
+  transform: rotate(45deg);
+}
+header nav .hidden-link-button .row2-click {
+  opacity: 0;
+}
+header nav .hidden-link-button .row3-click {
+  bottom: 12px;
+  transform: rotate(-45deg);
+}
+header .hidden-link {
+  position: absolute;
+  z-index: 4;
+  right: -150px;
+  top: 40px;
+  padding-top: 100px;
+  background-color: rgb(9, 32, 63);
+  height: 100vh;
+  transition: 0.5s;
+}
+header .hidden-link ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header .hidden-link ul li {
+  padding: 10px 10px;
+}
+header .hidden-link ul li a {
+  font-size: 1.2rem;
+  margin: 20px 20px;
+  color: rgb(246, 235, 225);
+}
+header .hidden-link ul li a svg {
+  width: 1.8rem;
+  fill: rgb(246, 235, 225);
+  padding-top: 10px;
+}
+header .hidden-link ul li:nth-child(6) a {
+  font-size: 1rem;
+}
+header .hidden-link-move {
+  right: 0px;
+}
+
+.carousel {
+  width: 100vw;
+  height: 40vw;
+  padding-top: 9%;
+  margin-bottom: 1%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.carousel div {
+  width: 37.5%;
+  height: 65%;
+  position: absolute;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.carousel div img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
+}
+.carousel span {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(188, 188, 188, 0.359);
+  border: 2px solid rgba(128, 128, 128, 0.505);
+  border-radius: 50%;
+  position: relative;
+  margin: 0 20px;
+  bottom: -91%;
+}
+.carousel span:hover {
+  background-color: rgb(188, 188, 188);
+}
+.carousel .check {
+  background-color: rgb(188, 188, 188);
+}
+.carousel .setL {
+  transform: translatex(-50%) scale(0.8);
+  opacity: 0.4;
+  z-index: -1;
+}
+.carousel .setR {
+  transform: translatex(50%) scale(0.8);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.course {
+  width: 100%;
+  overflow: hidden;
+}
+.course .group {
+  background-color: rgb(9, 32, 63);
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+.course .group form select {
+  width: 8vw;
+  margin: 10px 15px;
+  color: rgb(61, 63, 62);
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+}
+.course .group form .reaserch {
+  margin-right: 15px;
+  position: relative;
+}
+.course .group form .reaserch input {
+  width: 15vw;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px;
+  padding-left: 10px;
+}
+.course .group form .reaserch .submit {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: 10px;
+  top: 6px;
+}
+.course .group form .reaserch .submit svg {
+  width: 100%;
+  height: 100%;
+}
+.course .lesson {
+  width: 80vw;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+.course .lesson .lesson-time {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+.course .lesson .lesson-time form select {
+  margin: 10px 15px;
+  color: rgb(61, 63, 62);
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+}
+.course .lesson .lesson-time div {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  border: 2px solid rgb(9, 32, 63);
+  font-size: 1.1rem;
+  border-radius: 10px;
+  padding: 5px 15px;
+  color: rgb(9, 32, 63);
+  transition: 0.2s;
+}
+.course .lesson .lesson-time div svg {
+  width: 15px;
+  margin-right: 5px;
+  fill: rgb(9, 32, 63);
+}
+.course .lesson .lesson-time div a {
+  font-size: 1.1rem;
+  color: rgb(9, 32, 63);
+}
+.course .lesson .lesson-time .mylist:hover {
+  background-color: rgb(9, 32, 63);
+}
+.course .lesson .lesson-time .mylist:hover svg {
+  fill: rgba(245, 23, 97, 0.8156862745);
+  transition: fill 0.2s linear;
+}
+.course .lesson .lesson-time .mylist:hover a {
+  color: rgb(246, 235, 225);
+}
+.course .lesson .lesson-time .mylesson:hover {
+  background-color: rgb(9, 32, 63);
+}
+.course .lesson .lesson-time .mylesson:hover svg {
+  fill: rgb(246, 235, 225);
+  transition: fill 0.2s linear;
+}
+.course .lesson .lesson-time .mylesson:hover a {
+  color: rgb(246, 235, 225);
+}
+
+.lesson-flex .lesson-card {
+  width: 100%;
+  display: flex;
+  padding: 0 10% 0 20%;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.lesson-flex .lesson-card .lesson-info {
+  width: 15vw;
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px 30px;
+}
+.lesson-flex .lesson-card .lesson-info .lesson-pic {
+  width: 100%;
+}
+.lesson-flex .lesson-card .lesson-info .lesson-pic img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.lesson-flex .lesson-card .lesson-info .part {
+  background-color: black;
+  color: white;
+  width: 60px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.lesson-flex .lesson-card .lesson-info .teacher {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  position: absolute;
+  top: 40%;
+  right: 20px;
+}
+.lesson-flex .lesson-card .lesson-info .teacher img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.lesson-flex .lesson-card .lesson-info .part-title {
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+.lesson-flex .lesson-card .lesson-info .wtl {
+  display: flex;
+  margin: 10px 20px 20px 20px;
+  justify-content: space-between;
+}
+.lesson-flex .lesson-card .lesson-info .wtl div {
+  font-size: 0.5rem;
+  position: relative;
+}
+.lesson-flex .lesson-card .lesson-info .wtl div img {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.lesson-flex .lesson-card .lesson-info .wtl div .redheart {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(../img/heart-solid.svg);
+}
+.lesson-flex .lesson-card .lesson-info:hover {
+  transform: translateY(-10px);
+  box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.518);
+  transition: 0.5S;
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(9, 32, 63);
+  color: rgb(246, 235, 225);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 190px;
+}
+footer div {
+  text-align: center;
+}
+
+@media (max-width: 1500px) {
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher {
+    width: 60px;
+    height: 60px;
+    top: 40%;
+    right: 20px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .part-title {
+    font-size: 1.2rem;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl {
+    display: flex;
+    margin: 10px 20px 20px 20px;
+    justify-content: space-between;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl div {
+    font-size: 0.4rem;
+  }
+}
+@media (max-width: 1200px) {
+  body .lesson-flex .lesson-card {
+    padding: 0 10% 0 15%;
+  }
+  body .lesson-flex .lesson-card .lesson-info {
+    width: 18vw;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher {
+    width: 60px;
+    height: 60px;
+    top: 30%;
+    right: 10px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .part-title {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 1000px) {
+  body .course .group form select {
+    width: 11vw;
+    font-size: 1rem;
+  }
+  body .lesson-flex .lesson-card {
+    padding: 0 10% 0 10%;
+  }
+  body .lesson-flex .lesson-card .lesson-info {
+    width: 20vw;
+  }
+}
+@media (max-width: 900px) {
+  body .course .group form select {
+    width: 9vw;
+    font-size: 1rem;
+  }
+  body .lesson-flex .lesson-card {
+    padding: 0 10% 0 20%;
+  }
+  body .lesson-flex .lesson-card .lesson-info {
+    width: 25vw;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher {
+    width: 60px;
+    height: 60px;
+    top: 30%;
+    right: 10px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .part-title {
+    font-size: 1.2rem;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl {
+    display: flex;
+    margin: 10px 20px 20px 20px;
+    justify-content: space-between;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl div {
+    font-size: 0.4rem;
+  }
+}
+@media (max-width: 760px) {
+  body header nav .link {
+    display: none;
+  }
+  body header nav .hidden-link-button {
+    display: flex;
+  }
+  body .carousel span {
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+  }
+  body .course .group form select {
+    width: 13vw;
+    font-size: 1rem;
+  }
+  body .course .lesson {
+    width: 80vw;
+  }
+  body .course .lesson .lesson-time {
+    font-size: 1rem;
+    flex-direction: row-reverse;
+  }
+  body .course .lesson .lesson-time form select {
+    margin: 10px 5px;
+    font-size: 1rem;
+  }
+  body .course .lesson .lesson-time div {
+    border: solid 0;
+    margin: 0 15px 0 0;
+    padding: 0;
+  }
+  body .course .lesson .lesson-time div svg {
+    width: 15px;
+    fill: rgb(9, 32, 63);
+  }
+  body .course .lesson .lesson-time div a {
+    display: none;
+  }
+  body .course .lesson .lesson-time .mylist:hover {
+    background-color: rgba(9, 32, 63, 0);
+  }
+  body .course .lesson .lesson-time .mylist:hover svg {
+    fill: rgb(9, 32, 63);
+  }
+  body .course .lesson .lesson-time .mylesson:hover {
+    background-color: rgba(9, 32, 63, 0);
+  }
+  body .course .lesson .lesson-time .mylesson:hover svg {
+    fill: rgb(9, 32, 63);
+  }
+  body .lesson-flex .lesson-card {
+    padding: 0 10% 0 20%;
+    margin-top: 0;
+  }
+  body .lesson-flex .lesson-card .lesson-info {
+    width: 25vw;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher {
+    width: 60px;
+    height: 60px;
+    top: 30%;
+    right: 10px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .part-title {
+    font-size: 1.2rem;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl {
+    display: flex;
+    margin: 10px 20px 20px 20px;
+    justify-content: space-between;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl div {
+    font-size: 0.4rem;
+  }
+  footer {
+    padding: 10px 80px;
+  }
+}
+@media (max-width: 600px) {
+  body header nav .icon a svg {
+    width: 50px;
+  }
+  body header nav .link {
+    display: none;
+  }
+  body header nav .hidden-link-button {
+    display: flex;
+  }
+  body .carousel span {
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+  }
+  body .course .group {
+    padding: 10px 10px;
+  }
+  body .course .group form select {
+    width: 13vw;
+    font-size: 0.6rem;
+    margin: 0 5px;
+  }
+  body .course .group form .reaserch input {
+    width: 25vw;
+    height: 31px;
+  }
+  body .course .lesson {
+    margin-top: 0px;
+    width: 80vw;
+  }
+  body .course .lesson .lesson-time {
+    font-size: 1rem;
+    flex-direction: row-reverse;
+  }
+  body .course .lesson .lesson-time form select {
+    margin: 10px 5px;
+    font-size: 1rem;
+  }
+  body .course .lesson .lesson-time div {
+    border: solid 0;
+    margin: 0 10px 0 0;
+    padding: 0;
+  }
+  body .course .lesson .lesson-time div svg {
+    width: 15px;
+    fill: rgb(9, 32, 63);
+  }
+  body .course .lesson .lesson-time div a {
+    display: none;
+  }
+  body .course .lesson .lesson-time .mylist:hover {
+    background-color: rgba(9, 32, 63, 0);
+  }
+  body .course .lesson .lesson-time .mylist:hover svg {
+    fill: rgb(9, 32, 63);
+  }
+  body .course .lesson .lesson-time .mylesson:hover {
+    background-color: rgba(9, 32, 63, 0);
+  }
+  body .course .lesson .lesson-time .mylesson:hover svg {
+    fill: rgb(9, 32, 63);
+  }
+  body .lesson-flex .lesson-card {
+    padding: 0 10% 0 20%;
+    margin-top: 0;
+  }
+  body .lesson-flex .lesson-card .lesson-info {
+    width: 25vw;
+    margin: 5px 15px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .part {
+    width: 60px;
+    text-align: center;
+    padding: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher {
+    width: 40px;
+    height: 40px;
+    top: 25%;
+    right: 10px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .part-title {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl {
+    display: flex;
+    margin: 10px 20px 10px 10px;
+    justify-content: space-between;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl div {
+    font-size: 0.4rem;
+  }
+  footer {
+    padding: 10px 80px;
+  }
+  footer div {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 450px) {
+  body header nav .icon a {
+    margin: 0;
+  }
+  body header nav .hidden-link-button {
+    margin: 0;
+  }
+  body .carousel {
+    padding-top: 15%;
+  }
+  body .carousel div {
+    height: 60%;
+  }
+  body .course .group {
+    flex-direction: column-reverse;
+    padding: 10px 10px;
+  }
+  body .course .group form {
+    margin: 5px;
+  }
+  body .course .group form select {
+    width: 18vw;
+    font-size: 0.6rem;
+    margin: 0 5px;
+  }
+  body .course .group form .reaserch {
+    margin: 0;
+  }
+  body .course .group form .reaserch input {
+    width: 70vw;
+    height: 31px;
+  }
+  body .course .lesson {
+    margin-top: 0px;
+    width: 80vw;
+  }
+  body .course .lesson .lesson-time {
+    font-size: 1rem;
+    flex-direction: row-reverse;
+  }
+  body .course .lesson .lesson-time form select {
+    margin: 10px 5px;
+    font-size: 1rem;
+  }
+  body .course .lesson .lesson-time div {
+    border: solid 0;
+    margin: 0 10px 0 0;
+    padding: 0;
+  }
+  body .course .lesson .lesson-time div svg {
+    width: 15px;
+    fill: rgb(9, 32, 63);
+  }
+  body .course .lesson .lesson-time div a {
+    display: none;
+  }
+  body .course .lesson .lesson-time .mylist:hover {
+    background-color: rgba(9, 32, 63, 0);
+  }
+  body .course .lesson .lesson-time .mylist:hover svg {
+    fill: rgb(9, 32, 63);
+  }
+  body .course .lesson .lesson-time .mylesson:hover {
+    background-color: rgba(9, 32, 63, 0);
+  }
+  body .course .lesson .lesson-time .mylesson:hover svg {
+    fill: rgb(9, 32, 63);
+  }
+  body .lesson-flex .lesson-card {
+    padding: 0 10% 0 20%;
+    margin-top: 0;
+  }
+  body .lesson-flex .lesson-card .lesson-info {
+    width: 50vw;
+    margin: 5px 15px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .part {
+    width: 60px;
+    text-align: center;
+    padding: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher {
+    width: 40px;
+    height: 40px;
+    top: 25%;
+    right: 10px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .teacher img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .part-title {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl {
+    display: flex;
+    margin: 10px 20px 10px 10px;
+    justify-content: space-between;
+  }
+  body .lesson-flex .lesson-card .lesson-info .lesson-title .wtl div {
+    font-size: 0.4rem;
+  }
+  footer {
+    padding: 10px 50px;
+  }
+  footer div {
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=style.css.map */
